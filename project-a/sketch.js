@@ -5,6 +5,7 @@
 let d = 50;
 let angle = 0; 
 let pulse = 0; 
+let xc, yc;
 
 let x = 200
 let y = 450
@@ -15,7 +16,8 @@ let g = 240;
 let a = 1;
 
 function setup() {
-  createCanvas(800, 500);
+  console.log("setup ran");
+  let canvas=createCanvas(800, 500);
   canvas.id("p5-canvas");
   canvas.parent("p5-canvas-container");
   colorMode(HSB, 150);//imagine of a grass 
@@ -42,7 +44,6 @@ function bg(){
   circle(400,410,10);
   circle(480,180,10);
   circle(680,450,10);
-  
   //creature code 
 
   for (let x = d / 4; x < width; x += d) {
@@ -95,7 +96,7 @@ function snake(){
   translate(xc,yc);
   
   // the snake body
-  noStroke(255);
+  noStroke();
   //the body code for the green snake 
   push();
   fill(r, g, 120);
